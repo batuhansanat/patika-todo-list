@@ -22,7 +22,10 @@ document.addEventListener('DOMContentLoaded',GetLocalStorage)
 //* Add Item to List
 function addItem() {
 
-    if (inputTaskDOM.value) {
+    let isEmpty = text => text.trim().length > 0 //? Trim ile boşlukları silebiliyoruz. Bu şekilde boşlukları silinmiş bir textin uzunluğu 0'dan büyükse demek ki bir şeyler yazılmış anlamına geliyor. 0'dan küçükse demek ki boşluk bırakılmış veya input boş. Bu değer true veya false döndürür.
+    console.log(isEmpty(inputTaskDOM.value))
+
+    if (isEmpty(inputTaskDOM.value)) {
 
          //? save localstorage
         SaveLocalStorage(inputTaskDOM.value)
